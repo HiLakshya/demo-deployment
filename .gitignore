@@ -1,0 +1,90 @@
+# General
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual Environment
+venv/
+env/
+
+# Flask specific
+instance/
+webapp.egg-info/
+celerybeat-schedule
+celerybeat.pid
+celery_worker-*.pid
+logs/
+__init__.py
+
+# IDE or editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Logs
+*.log
+*.log.*
+
+# Test coverage
+htmlcov/
+
+# Translations
+*.mo
+
+# Docker
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Local development
+*.local
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# Environments
+.env
+.venv
+env/
+venv/
+env.bak/
+venv.bak/
+__env__/
+
+# PyCharm files
+.idea/
+
+# Sublime Text files
+*.sublime-project
+*.sublime-workspace
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Vim
+*.swp
+*.swo
+
+# Flask env
+.flaskenv
