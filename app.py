@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from utils import model_predict
 import pickle
 import os
 
@@ -18,6 +19,24 @@ def predict():
     prediction = clf.predict(tokenized_email)
     prediction = 1 if prediction == 1 else -1
     return render_template("index.html", prediction=prediction, email=email)
+
+@app.route('/api/predict', methods=['POST'])
+def predict_api():
+    data = request.get_json(force=True)  # Get data posted as a json
+    email = data['content']
+    prediction = model_predict(email)
+
+    if prediction == 1:
+        prediction = "Spam"
+    else:
+        prediction = "Not Spam"
+        
+    return jsonify({'prediction': prediction, 'email': email})  # Return prediction
+
+
+@app.route('/api/status', methods=['GET'])
+def status():
+    return jsonify({'status': 'ok'})
 
 port = int(os.environ.get("PORT", 5000))
 
